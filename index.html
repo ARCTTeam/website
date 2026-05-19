@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITech Project </> | Ingeniero Informático & Especialista en Redes</title>
-    <meta name="description" content="ITech Project </> - Ingeniero Informático especializado en redes, Linux, Docker, pfSense, scripting y reparación de equipos. Servicios profesionales de TI.">
+    <meta name="description"
+        content="ITech Project - Ingeniero Informático especializado en redes, Linux, Docker, pfSense, scripting y reparación de equipos. Servicios profesionales de TI.">
     <meta name="author" content="Alvaro Ramírez">
-    <meta property="og:title" content="ITech Project </> | Ingeniero Informático">
-    <meta property="og:description" content="Servicios profesionales de reparación, mantenimiento y comercialización de equipos de cómputo. Especialista en redes y sistemas.">
+    <meta property="og:title" content="ITech Project | Ingeniero Informático">
+    <meta property="og:description"
+        content="Servicios profesionales de reparación, mantenimiento y comercialización de equipos de cómputo. Especialista en redes y sistemas.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https:/arctteam.github.io">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#060b14">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-    
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+
     <!-- Font Awesome 6 (iconos profesionales) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
             --bg-primary: #060b14;
@@ -87,8 +93,13 @@
         }
 
         @keyframes moveDots {
-            0% { background-position: 0 0; }
-            100% { background-position: 40px 40px; }
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 40px 40px;
+            }
         }
 
         .container {
@@ -110,6 +121,7 @@
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
@@ -247,6 +259,7 @@
         .nav-links li a:hover {
             color: var(--text-primary);
         }
+
         .nav-links li a:hover::after {
             width: 100%;
         }
@@ -255,9 +268,11 @@
             color: var(--accent-cyan);
             font-weight: 600;
         }
+
         .nav-links li a.contact-link:hover {
             color: var(--accent-blue);
         }
+
         .nav-links li a.contact-link::after {
             background: var(--accent-cyan);
         }
@@ -287,9 +302,11 @@
                 gap: 16px;
                 border-bottom: 1px solid var(--border-color);
             }
+
             .nav-links.active {
                 display: flex;
             }
+
             .mobile-menu-btn {
                 display: block;
             }
@@ -302,7 +319,7 @@
             display: flex;
             align-items: center;
             background: radial-gradient(ellipse at 30% 50%, rgba(6, 11, 20, 0.9) 0%, #060b14 60%),
-                        radial-gradient(ellipse at 70% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+                radial-gradient(ellipse at 70% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
             overflow: hidden;
         }
 
@@ -346,8 +363,17 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.85); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.85);
+            }
         }
 
         .hero-title {
@@ -402,6 +428,7 @@
             color: #fff;
             box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
         }
+
         .btn-primary:hover {
             background: var(--accent-blue-hover);
             transform: translateY(-3px);
@@ -413,6 +440,7 @@
             color: var(--text-primary);
             border: 1px solid var(--border-accent);
         }
+
         .btn-secondary:hover {
             border-color: var(--accent-blue);
             background: rgba(59, 130, 246, 0.1);
@@ -439,6 +467,7 @@
             -webkit-backdrop-filter: blur(12px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .terminal-window:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(59, 130, 246, 0.25);
@@ -458,9 +487,18 @@
             height: 12px;
             border-radius: 50%;
         }
-        .terminal-dot.red { background: var(--accent-red); }
-        .terminal-dot.yellow { background: var(--accent-amber); }
-        .terminal-dot.green { background: var(--accent-green); }
+
+        .terminal-dot.red {
+            background: var(--accent-red);
+        }
+
+        .terminal-dot.yellow {
+            background: var(--accent-amber);
+        }
+
+        .terminal-dot.green {
+            background: var(--accent-green);
+        }
 
         .terminal-body {
             padding: 20px;
@@ -471,9 +509,18 @@
             min-height: 200px;
         }
 
-        .terminal-body .prompt { color: var(--accent-green); }
-        .terminal-body .command { color: var(--text-primary); }
-        .terminal-body .output { color: var(--accent-cyan); }
+        .terminal-body .prompt {
+            color: var(--accent-green);
+        }
+
+        .terminal-body .command {
+            color: var(--text-primary);
+        }
+
+        .terminal-body .output {
+            color: var(--accent-cyan);
+        }
+
         .terminal-body .cursor {
             display: inline-block;
             width: 8px;
@@ -483,9 +530,17 @@
             vertical-align: middle;
             margin-left: 2px;
         }
+
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
 
         .scroll-indicator {
@@ -502,6 +557,7 @@
             letter-spacing: 0.05em;
             z-index: 1;
         }
+
         .scroll-indicator .mouse {
             width: 24px;
             height: 36px;
@@ -509,6 +565,7 @@
             border-radius: 12px;
             position: relative;
         }
+
         .scroll-indicator .mouse::after {
             content: '';
             position: absolute;
@@ -521,9 +578,17 @@
             border-radius: 2px;
             animation: scrollWheel 1.5s infinite;
         }
+
         @keyframes scrollWheel {
-            0% { top: 6px; opacity: 1; }
-            100% { top: 18px; opacity: 0; }
+            0% {
+                top: 6px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 18px;
+                opacity: 0;
+            }
         }
 
         @media (max-width: 900px) {
@@ -532,10 +597,22 @@
                 gap: 40px;
                 text-align: center;
             }
-            .hero-content { max-width: 100%; }
-            .hero-buttons { justify-content: center; }
-            .terminal-window { max-width: 100%; }
-            .scroll-indicator { display: none; }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .terminal-window {
+                max-width: 100%;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
         }
 
         /* ===== SECCIÓN DE NEGOCIO ===== */
@@ -615,12 +692,14 @@
             background: var(--bg-primary);
             position: relative;
         }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
             margin-top: 40px;
         }
+
         .skill-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -632,21 +711,29 @@
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
         }
+
         .skill-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 2px;
             background: var(--gradient-blue);
             opacity: 0;
             transition: opacity var(--transition-fast);
         }
+
         .skill-card:hover {
             border-color: rgba(59, 130, 246, 0.4);
             transform: translateY(-6px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.25);
         }
-        .skill-card:hover::before { opacity: 1; }
+
+        .skill-card:hover::before {
+            opacity: 1;
+        }
+
         .skill-icon {
             font-size: 36px;
             margin-bottom: 16px;
@@ -654,26 +741,31 @@
             transition: transform 0.3s ease;
             color: var(--accent-cyan);
         }
+
         .skill-card:hover .skill-icon {
             transform: scale(1.1) rotate(-5deg);
         }
+
         .skill-card h3 {
             font-weight: 700;
             font-size: 18px;
             margin-bottom: 8px;
             color: var(--text-primary);
         }
+
         .skill-card p {
             font-size: 14px;
             color: var(--text-secondary);
             line-height: 1.6;
         }
+
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
             margin-top: 14px;
         }
+
         .skill-tag {
             font-size: 11px;
             padding: 4px 12px;
@@ -685,6 +777,7 @@
             letter-spacing: 0.02em;
             transition: all 0.2s ease;
         }
+
         .skill-card:hover .skill-tag {
             background: rgba(59, 130, 246, 0.2);
             border-color: rgba(59, 130, 246, 0.4);
@@ -697,6 +790,7 @@
             gap: 28px;
             margin-top: 40px;
         }
+
         .project-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -708,11 +802,13 @@
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
         }
+
         .project-card:hover {
             border-color: rgba(59, 130, 246, 0.45);
             transform: translateY(-6px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.3);
         }
+
         .project-image {
             width: 100%;
             height: 200px;
@@ -725,21 +821,25 @@
             color: var(--text-muted);
             transition: transform 0.4s ease, color 0.3s ease;
         }
+
         .project-card:hover .project-image {
             transform: scale(1.05);
             color: var(--accent-cyan);
         }
+
         .project-body {
             padding: 24px;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
+
         .project-body h3 {
             font-weight: 700;
             font-size: 18px;
             margin-bottom: 8px;
         }
+
         .project-body p {
             font-size: 14px;
             color: var(--text-secondary);
@@ -747,10 +847,12 @@
             flex: 1;
             margin-bottom: 16px;
         }
+
         .project-links {
             display: flex;
             gap: 14px;
         }
+
         .project-link {
             display: inline-flex;
             align-items: center;
@@ -761,6 +863,7 @@
             text-decoration: none;
             transition: color 0.2s ease, transform 0.2s ease;
         }
+
         .project-link:hover {
             color: var(--accent-blue);
             transform: translateX(3px);
@@ -774,11 +877,13 @@
             padding-left: 30px;
             border-left: 2px solid var(--border-color);
         }
+
         .timeline-item {
             position: relative;
             margin-bottom: 48px;
             padding-left: 30px;
         }
+
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -792,9 +897,11 @@
             box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
             transition: box-shadow 0.3s ease;
         }
+
         .timeline-item:hover::before {
             box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.5);
         }
+
         .timeline-date {
             font-size: 12px;
             font-weight: 600;
@@ -802,17 +909,20 @@
             letter-spacing: 0.08em;
             margin-bottom: 6px;
         }
+
         .timeline-item h3 {
             font-weight: 700;
             font-size: 18px;
             margin-bottom: 4px;
         }
+
         .timeline-item .company {
             font-size: 14px;
             color: var(--text-secondary);
             font-weight: 500;
             margin-bottom: 10px;
         }
+
         .timeline-item p {
             font-size: 14px;
             color: var(--text-secondary);
@@ -823,6 +933,7 @@
         #contact {
             background: var(--bg-secondary);
         }
+
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -830,11 +941,13 @@
             margin-top: 40px;
             align-items: start;
         }
+
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
+
         .contact-item {
             display: flex;
             align-items: center;
@@ -847,11 +960,13 @@
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
         }
+
         .contact-item:hover {
             border-color: var(--accent-blue);
             transform: translateY(-3px);
             box-shadow: var(--shadow-card-hover);
         }
+
         .contact-icon {
             width: 48px;
             height: 48px;
@@ -864,16 +979,19 @@
             flex-shrink: 0;
             color: var(--accent-cyan);
         }
+
         .contact-text strong {
             display: block;
             font-size: 15px;
             font-weight: 600;
             color: var(--text-primary);
         }
+
         .contact-text span {
             font-size: 14px;
             color: var(--text-secondary);
         }
+
         .contact-form {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -885,6 +1003,7 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
         }
+
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -898,15 +1017,18 @@
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
             outline: none;
         }
+
         .contact-form input:focus,
         .contact-form textarea:focus {
             border-color: var(--accent-blue);
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         }
+
         .contact-form textarea {
             min-height: 130px;
             resize: vertical;
         }
+
         .contact-form button {
             align-self: flex-start;
         }
@@ -924,15 +1046,18 @@
             padding: 36px 0;
             text-align: center;
         }
+
         footer p {
             font-size: 14px;
             color: var(--text-muted);
         }
+
         footer a {
             color: var(--accent-cyan);
             text-decoration: none;
             font-weight: 500;
         }
+
         .footer-brand {
             font-family: 'JetBrains Mono', monospace;
             font-weight: 600;
@@ -963,10 +1088,12 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
         }
+
         .back-to-top.visible {
             opacity: 1;
             visibility: visible;
         }
+
         .back-to-top:hover {
             background: var(--accent-blue-hover);
             transform: translateY(-4px);
@@ -974,6 +1101,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="bg-pattern"></div>
     <!-- Header -->
@@ -981,7 +1109,7 @@
         <nav class="container">
             <a href="#hero" class="nav-logo">
                 <span class="nav-logo-icon"><i class="fas fa-microchip"></i></span>
-                <span class="nav-logo-text">ITech Project </></span>
+                <span class="nav-logo-text">Alvaro Ramirez Naranjo </></span>
             </a>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú"><i class="fas fa-bars"></i></button>
             <ul class="nav-links" id="navLinks">
@@ -1001,13 +1129,14 @@
             <div class="hero-grid">
                 <div class="hero-content reveal">
                     <span class="hero-badge">
-                        <span class="hero-badge-dot"></span> ITech Project </>
+                        <span class="hero-badge-dot"></span> Disponible para proyectos </>
                     </span>
                     <h1 class="hero-title">
                         Ingeniero <span class="highlight">Informático</span> & Especialista en Redes
                     </h1>
                     <p class="hero-description">
-                        Soluciones profesionales en reparación, mantenimiento y comercialización de equipos de cómputo. Apasionado por las infraestructuras de red seguras, automatización y optimización de sistemas.
+                        Soluciones profesionales en reparación, mantenimiento y comercialización de equipos de cómputo.
+                        Apasionado por las infraestructuras de red seguras, automatización y optimización de sistemas.
                     </p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> Ver Proyectos</a>
@@ -1025,8 +1154,8 @@
                             <span class="prompt">$</span> <span class="command">whoami</span><br>
                             <span class="output">ITech_Project</span><br><br>
                             <span class="prompt">$</span> <span class="command">docker ps</span><br>
-                            <span class="output">CONTAINER ID   IMAGE          STATUS</span><br>
-                            <span class="output">a1b2c3d4e5f6   nginx:latest   Up 3 days</span><br><br>
+                            <span class="output">CONTAINER ID IMAGE STATUS</span><br>
+                            <span class="output">a1b2c3d4e5f6 nginx:latest Up 3 days</span><br><br>
                             <span class="prompt">$</span> <span class="command">pfctl -s rules</span><br>
                             <span class="output">block in all</span><br>
                             <span class="output">pass out all keep state</span><br>
@@ -1047,10 +1176,13 @@
         <div class="container">
             <div class="business-card reveal">
                 <span class="section-label"><i class="fas fa-tools"></i> Servicios</span>
-                <div class="business-logo">ITech Project </></div>
-                <p class="section-subtitle" style="margin-bottom: 8px;">Reparación, mantenimiento y comercialización de equipos de cómputo</p>
+                <div class="business-logo">ITech Project </>
+                </div>
+                <p class="section-subtitle" style="margin-bottom: 8px;">Reparación, mantenimiento y comercialización de
+                    equipos de cómputo</p>
                 <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 24px;">
-                    Soluciones integrales para tu hardware y software. Desde diagnóstico y reparación hasta venta de equipos nuevos y reacondicionados.
+                    Soluciones integrales para tu hardware y software. Desde diagnóstico y reparación hasta venta de
+                    equipos nuevos y reacondicionados.
                 </p>
                 <div class="business-services">
                     <div class="service-item">
@@ -1079,12 +1211,14 @@
         <div class="container" style="text-align:center;">
             <span class="section-label reveal"><i class="fas fa-brain"></i> Competencias</span>
             <h2 class="section-title reveal">Tecnologías que domino</h2>
-            <p class="section-subtitle reveal">Stack multidisciplinar orientado a resultados, desde el núcleo de la red hasta la capa de presentación web.</p>
+            <p class="section-subtitle reveal">Stack multidisciplinar orientado a resultados, desde el núcleo de la red
+                hasta la capa de presentación web.</p>
             <div class="skills-grid">
                 <div class="skill-card reveal">
                     <div class="skill-icon"><i class="fas fa-globe"></i></div>
                     <h3>Redes & Seguridad</h3>
-                    <p>Diseño, configuración y administración de firewalls pfSense, segmentación de red, VPNs site‑to‑site y políticas de acceso.</p>
+                    <p>Diseño, configuración y administración de firewalls pfSense, segmentación de red, VPNs
+                        site‑to‑site y políticas de acceso.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">pfSense</span>
                         <span class="skill-tag">VPN</span>
@@ -1094,7 +1228,8 @@
                 <div class="skill-card reveal">
                     <div class="skill-icon"><i class="fab fa-docker"></i></div>
                     <h3>Docker & Contenedores</h3>
-                    <p>Creación de entornos reproducibles con Docker y Docker Compose. Despliegue de stacks LAMP/LEMP, reverse proxy con Nginx Proxy y redes internas.</p>
+                    <p>Creación de entornos reproducibles con Docker y Docker Compose. Despliegue de stacks LAMP/LEMP,
+                        reverse proxy con Nginx Proxy y redes internas.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Docker Compose</span>
@@ -1103,7 +1238,8 @@
                 <div class="skill-card reveal">
                     <div class="skill-icon"><i class="fab fa-linux"></i></div>
                     <h3>Linux</h3>
-                    <p>Administración avanzada de servidores Linux (Debian/Ubuntu), hardening, monitoreo y resolución de incidencias.</p>
+                    <p>Administración avanzada de servidores Linux (Debian/Ubuntu), hardening, monitoreo y resolución de
+                        incidencias.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">Bash</span>
                         <span class="skill-tag">Systemd</span>
@@ -1113,7 +1249,8 @@
                 <div class="skill-card reveal">
                     <div class="skill-icon"><i class="fas fa-bolt"></i></div>
                     <h3>Scripting & Automatización</h3>
-                    <p>Automatización de tareas repetitivas con PowerShell en Windows y Bash en Linux. Migraciones, reportes y despliegues desatendidos.</p>
+                    <p>Automatización de tareas repetitivas con PowerShell en Windows y Bash en Linux. Migraciones,
+                        reportes y despliegues desatendidos.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">PowerShell</span>
                         <span class="skill-tag">Bash</span>
@@ -1122,7 +1259,8 @@
                 <div class="skill-card reveal">
                     <div class="skill-icon"><i class="fas fa-desktop"></i></div>
                     <h3>Desarrollo Web</h3>
-                    <p>Sitios web estáticos con HTML5 y CSS3 moderno, así como gestión de contenido con WordPress. Enfoque en rendimiento, SEO y diseño responsive.</p>
+                    <p>Sitios web estáticos con HTML5 y CSS3 moderno, así como gestión de contenido con WordPress.
+                        Enfoque en rendimiento, SEO y diseño responsive.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">HTML5</span>
                         <span class="skill-tag">CSS3</span>
@@ -1132,7 +1270,8 @@
                 <div class="skill-card reveal">
                     <div class="skill-icon"><i class="fas fa-wrench"></i></div>
                     <h3>Optimización de Windows</h3>
-                    <p>Mi pasatiempo: personalizar y optimizar Windows al máximo rendimiento. Limpieza de bloatware, ajustes de privacidad y tweaks de sistema.</p>
+                    <p>Mi pasatiempo: personalizar y optimizar Windows al máximo rendimiento. Limpieza de bloatware,
+                        ajustes de privacidad y tweaks de sistema.</p>
                     <div class="skill-tags">
                         <span class="skill-tag">Windows 10/11</span>
                         <span class="skill-tag">Tweaks</span>
@@ -1147,13 +1286,15 @@
         <div class="container" style="text-align:center;">
             <span class="section-label reveal"><i class="fas fa-folder-open"></i> Portafolio</span>
             <h2 class="section-title reveal">Proyectos destacados</h2>
-            <p class="section-subtitle reveal">Una muestra de trabajos que reflejan mi enfoque práctico y mi pasión por la tecnología bien hecha.</p>
+            <p class="section-subtitle reveal">Una muestra de trabajos que reflejan mi enfoque práctico y mi pasión por
+                la tecnología bien hecha.</p>
             <div class="projects-grid">
                 <div class="project-card reveal">
                     <div class="project-image"><i class="fas fa-shield"></i></div>
                     <div class="project-body">
                         <h3>Firewall pfSense Multi‑WAN</h3>
-                        <p>Configuración de un firewall pfSense con balanceo de carga y failover para una PYME, incluyendo VPN para teletrabajo seguro.</p>
+                        <p>Configuración de un firewall pfSense con balanceo de carga y failover para una PYME,
+                            incluyendo VPN para teletrabajo seguro.</p>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="far fa-file-alt"></i> Caso de estudio</a>
                             <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
@@ -1164,7 +1305,8 @@
                     <div class="project-image"><i class="fab fa-docker"></i></div>
                     <div class="project-body">
                         <h3>Stack Docker para desarrollo</h3>
-                        <p>Entorno de desarrollo completo con Nginx, PHP, MySQL y phpMyAdmin orquestado con Docker Compose, listo para clonar y usar.</p>
+                        <p>Entorno de desarrollo completo con Nginx, PHP, MySQL y phpMyAdmin orquestado con Docker
+                            Compose, listo para clonar y usar.</p>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                         </div>
@@ -1174,7 +1316,8 @@
                     <div class="project-image"><i class="fas fa-chart-bar"></i></div>
                     <div class="project-body">
                         <h3>Script de auditoría del sistema</h3>
-                        <p>PowerShell script que genera un informe detallado del hardware, software instalado y estado de seguridad de un equipo Windows.</p>
+                        <p>PowerShell script que genera un informe detallado del hardware, software instalado y estado
+                            de seguridad de un equipo Windows.</p>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                         </div>
@@ -1184,7 +1327,8 @@
                     <div class="project-image"><i class="fas fa-globe"></i></div>
                     <div class="project-body">
                         <h3>Sitio web corporativo WordPress</h3>
-                        <p>Diseño y despliegue de un sitio web completo en WordPress para un cliente del sector servicios, optimizado para SEO y velocidad.</p>
+                        <p>Diseño y despliegue de un sitio web completo en WordPress para un cliente del sector
+                            servicios, optimizado para SEO y velocidad.</p>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Visitar sitio</a>
                         </div>
@@ -1194,9 +1338,11 @@
                     <div class="project-image"><i class="fas fa-cogs"></i></div>
                     <div class="project-body">
                         <h3>Optimizador de Windows</h3>
-                        <p>Conjunto de scripts y ajustes personales para maximizar el rendimiento de Windows 10/11, eliminar telemetría y mejorar la privacidad.</p>
+                        <p>Conjunto de scripts y ajustes personales para maximizar el rendimiento de Windows 10/11,
+                            eliminar telemetría y mejorar la privacidad.</p>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/ARCTTeam/WinOS-ISO-Debloater" class="project-link"><i
+                                    class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -1204,7 +1350,8 @@
                     <div class="project-image"><i class="fas fa-network-wired"></i></div>
                     <div class="project-body">
                         <h3>Monitor de red con Bash</h3>
-                        <p>Script en Bash que monitorea la conectividad de dispositivos en una red local y envía alertas por correo cuando un host deja de responder.</p>
+                        <p>Script en Bash que monitorea la conectividad de dispositivos en una red local y envía alertas
+                            por correo cuando un host deja de responder.</p>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                         </div>
@@ -1224,25 +1371,29 @@
                     <span class="timeline-date">2022 – Presente</span>
                     <h3>Ingeniero de Soporte e Implantación</h3>
                     <span class="company">Empresa Tecnológica</span>
-                    <p>Responsable del despliegue de soluciones de software en entornos cliente, soporte técnico de nivel 2 y 3, y automatización de procesos internos con PowerShell y Bash.</p>
+                    <p>Responsable del despliegue de soluciones de software en entornos cliente, soporte técnico de
+                        nivel 2 y 3, y automatización de procesos internos con PowerShell y Bash.</p>
                 </div>
                 <div class="timeline-item reveal">
                     <span class="timeline-date">2020 – 2022</span>
                     <h3>Administrador de Sistemas Junior</h3>
                     <span class="company">Consultora IT</span>
-                    <p>Administración de servidores Linux, configuración de firewalls pfSense para clientes corporativos y migración de servicios a contenedores Docker.</p>
+                    <p>Administración de servidores Linux, configuración de firewalls pfSense para clientes corporativos
+                        y migración de servicios a contenedores Docker.</p>
                 </div>
                 <div class="timeline-item reveal">
                     <span class="timeline-date">2018 – 2020</span>
                     <h3>Técnico de Redes</h3>
                     <span class="company">Proveedor de Internet</span>
-                    <p>Instalación y mantenimiento de infraestructura de red, configuración de routers y switches, y atención de incidencias de conectividad.</p>
+                    <p>Instalación y mantenimiento de infraestructura de red, configuración de routers y switches, y
+                        atención de incidencias de conectividad.</p>
                 </div>
                 <div class="timeline-item reveal">
                     <span class="timeline-date">2016 – 2018</span>
                     <h3>Desarrollador Web</h3>
                     <span class="company">Freelance / Proyectos propios</span>
-                    <p>Creación de sitios web estáticos con HTML5 y CSS3, y gestión de contenidos con WordPress. Enfoque en diseño responsive, rendimiento y posicionamiento SEO básico.</p>
+                    <p>Creación de sitios web estáticos con HTML5 y CSS3, y gestión de contenidos con WordPress. Enfoque
+                        en diseño responsive, rendimiento y posicionamiento SEO básico.</p>
                 </div>
             </div>
         </div>
@@ -1253,7 +1404,9 @@
         <div class="container" style="text-align:center;">
             <span class="section-label reveal"><i class="far fa-envelope"></i> Hablemos</span>
             <h2 class="section-title reveal">Contacto</h2>
-            <p class="section-subtitle reveal">¿Tienes un proyecto en mente o necesitas un especialista? Escríbeme a <strong>alvaro.ramirezn833@gmail.com</strong></p>
+            <p class="section-subtitle reveal">¿Tienes un proyecto en mente o necesitas un especialista? Escríbeme a
+                <strong>alvaro.ramirezn833@gmail.com</strong>
+            </p>
             <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-item reveal">
@@ -1278,25 +1431,30 @@
                         </div>
                     </div>
                     <div class="contact-item reveal" style="border-color: rgba(6, 182, 212, 0.4);">
-                        <span class="contact-icon" style="background: rgba(6, 182, 212, 0.15);"><i class="fas fa-tools"></i></span>
+                        <span class="contact-icon" style="background: rgba(6, 182, 212, 0.15);"><i
+                                class="fas fa-tools"></i></span>
                         <div class="contact-text">
                             <strong>ITech Project </></strong>
                             <span>Reparación y mantenimiento de equipos</span>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form reveal" action="https://formsubmit.co/alvaro.ramirezn833@gmail.com" method="POST">
+                <form class="contact-form reveal" action="https://formsubmit.co/alvaro.ramirezn833@gmail.com"
+                    method="POST">
                     <!-- Configuración adicional para FormSubmit -->
                     <input type="hidden" name="_subject" value="Nuevo mensaje desde ITech Project">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="https://tu-usuario.github.io/gracias.html">
-                    
+
                     <input type="text" name="nombre" placeholder="Tu nombre" required>
                     <input type="email" name="email" placeholder="Tu email" required>
                     <input type="text" name="asunto" placeholder="Asunto">
-                    <textarea name="mensaje" placeholder="¿En qué puedo ayudarte? Cuéntame sobre tu proyecto o consulta..." required></textarea>
-                    <button type="submit" class="btn btn-primary"><i class="far fa-paper-plane"></i> Enviar mensaje</button>
+                    <textarea name="mensaje"
+                        placeholder="¿En qué puedo ayudarte? Cuéntame sobre tu proyecto o consulta..."
+                        required></textarea>
+                    <button type="submit" class="btn btn-primary"><i class="far fa-paper-plane"></i> Enviar
+                        mensaje</button>
                 </form>
             </div>
         </div>
@@ -1305,12 +1463,14 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 <span class="footer-brand">ITech Project </></span> | <a href="mailto:alvaro.ramirezn833@gmail.com">alvaro.ramirezn833@gmail.com</a></p>
+            <p>© 2026 <span class="footer-brand">ITech Project </></span> | <a
+                    href="mailto:alvaro.ramirezn833@gmail.com">alvaro.ramirezn833@gmail.com</a></p>
             <p style="margin-top: 8px;">Reparación, mantenimiento y comercialización de equipos de cómputo</p>
         </div>
     </footer>
 
-    <button class="back-to-top" id="backToTop" aria-label="Volver arriba" title="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba" title="Volver arriba"><i
+            class="fas fa-arrow-up"></i></button>
 
     <script>
         // Menú móvil
@@ -1350,30 +1510,30 @@
                 if (startTime === null) startTime = currentTime;
                 const timeElapsed = currentTime - startTime;
                 const progress = Math.min(timeElapsed / duration, 1);
-                
-                const ease = progress < 0.5 
-                    ? 4 * progress * progress * progress 
+
+                const ease = progress < 0.5
+                    ? 4 * progress * progress * progress
                     : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-                
+
                 window.scrollTo(0, startPosition + distance * ease);
-                
+
                 if (timeElapsed < duration) {
                     requestAnimationFrame(animation);
                 }
             }
-            
+
             requestAnimationFrame(animation);
         }
 
         // Navegación suave
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     const headerHeight = document.querySelector('header').offsetHeight;
                     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                    
+
                     setTimeout(() => {
                         smoothScrollTo(targetPosition, 900);
                     }, 100);
@@ -1394,4 +1554,5 @@
         revealElements.forEach(el => observer.observe(el));
     </script>
 </body>
+
 </html>
