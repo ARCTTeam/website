@@ -18,7 +18,7 @@
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
 
-    <!-- Font Awesome 6 (iconos profesionales) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +74,6 @@
             overflow-x: hidden;
         }
 
-        /* Fondo animado de puntos */
         .bg-pattern {
             position: fixed;
             top: 0;
@@ -89,12 +88,8 @@
         }
 
         @keyframes moveDots {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 40px 40px;
-            }
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
         }
 
         .container {
@@ -110,14 +105,13 @@
             padding: 100px 0;
         }
 
-        /* ===== REVEAL MEJORADO ===== */
+        /* REVEAL MEJORADO */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
-        /* Retraso progresivo para elementos dentro de contenedores con clase .stagger */
         .stagger .reveal:nth-child(1) { transition-delay: 0.05s; }
         .stagger .reveal:nth-child(2) { transition-delay: 0.1s; }
         .stagger .reveal:nth-child(3) { transition-delay: 0.15s; }
@@ -145,7 +139,6 @@
             color: var(--accent-blue);
             margin-bottom: 20px;
             backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
         }
 
         .section-title {
@@ -170,7 +163,7 @@
             margin: 0 auto 40px;
         }
 
-        /* ===== HEADER / NAV ===== */
+        /* HEADER */
         header {
             position: fixed;
             top: 0;
@@ -179,7 +172,6 @@
             z-index: 100;
             background: rgba(6, 11, 20, 0.8);
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid transparent;
             transition: all var(--transition-smooth);
         }
@@ -275,14 +267,6 @@
             font-weight: 600;
         }
 
-        .nav-links li a.contact-link:hover {
-            color: var(--accent-blue);
-        }
-
-        .nav-links li a.contact-link::after {
-            background: var(--accent-cyan);
-        }
-
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -290,8 +274,6 @@
             color: var(--text-primary);
             font-size: 28px;
             cursor: pointer;
-            padding: 8px;
-            line-height: 1;
         }
 
         @media (max-width: 768px) {
@@ -308,15 +290,11 @@
                 gap: 16px;
                 border-bottom: 1px solid var(--border-color);
             }
-            .nav-links.active {
-                display: flex;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
         }
 
-        /* ===== HERO ===== */
+        /* HERO */
         #hero {
             position: relative;
             min-height: 100vh;
@@ -324,7 +302,6 @@
             align-items: center;
             background: radial-gradient(ellipse at 30% 50%, rgba(6, 11, 20, 0.9) 0%, #060b14 60%),
                         radial-gradient(ellipse at 70% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
-            overflow: hidden;
         }
 
         .hero-grid {
@@ -335,12 +312,7 @@
             padding: 120px 0 80px;
         }
 
-        .hero-content {
-            max-width: 560px;
-            position: relative;
-            z-index: 1;
-        }
-
+        .hero-content { max-width: 560px; }
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -351,13 +323,9 @@
             border-radius: 999px;
             font-size: 12px;
             font-weight: 600;
-            letter-spacing: 0.05em;
             color: var(--accent-cyan);
             margin-bottom: 24px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
         }
-
         .hero-badge-dot {
             width: 8px;
             height: 8px;
@@ -365,12 +333,10 @@
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
-
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.5; transform: scale(0.85); }
         }
-
         .hero-title {
             font-size: clamp(40px, 6vw, 68px);
             font-weight: 800;
@@ -378,27 +344,22 @@
             margin-bottom: 24px;
             letter-spacing: -0.03em;
         }
-
         .hero-title .highlight {
             background: var(--gradient-blue);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .hero-description {
             font-size: 18px;
             color: var(--text-secondary);
-            line-height: 1.7;
             margin-bottom: 36px;
         }
-
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
         }
-
         .btn {
             display: inline-flex;
             align-items: center;
@@ -411,45 +372,27 @@
             transition: all var(--transition-smooth);
             cursor: pointer;
             border: none;
-            letter-spacing: 0.01em;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
         }
-
         .btn-primary {
             background: var(--accent-blue);
             color: #fff;
             box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
         }
-
         .btn-primary:hover {
             background: var(--accent-blue-hover);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
         }
-
         .btn-secondary {
             background: transparent;
             color: var(--text-primary);
             border: 1px solid var(--border-accent);
         }
-
         .btn-secondary:hover {
             border-color: var(--accent-blue);
             background: rgba(59, 130, 246, 0.1);
             transform: translateY(-3px);
         }
-
-        .hero-visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-        }
-
+        .hero-visual { display: flex; justify-content: center; }
         .terminal-window {
             width: 100%;
             max-width: 500px;
@@ -457,42 +400,27 @@
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: var(--shadow-card-hover);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
-
-        .terminal-window:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(59, 130, 246, 0.25);
-        }
-
+        .terminal-window:hover { transform: translateY(-5px); }
         .terminal-header {
             display: flex;
-            align-items: center;
             gap: 8px;
             padding: 12px 16px;
             background: rgba(15, 25, 42, 0.6);
             border-bottom: 1px solid var(--border-color);
         }
-
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
+        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
         .terminal-dot.red { background: var(--accent-red); }
         .terminal-dot.yellow { background: var(--accent-amber); }
         .terminal-dot.green { background: var(--accent-green); }
-
         .terminal-body {
             padding: 20px;
-            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            font-family: 'JetBrains Mono', monospace;
             font-size: 13px;
             line-height: 1.8;
             color: var(--text-secondary);
-            min-height: 200px;
         }
         .terminal-body .prompt { color: var(--accent-green); }
         .terminal-body .command { color: var(--text-primary); }
@@ -504,68 +432,26 @@
             background: var(--accent-cyan);
             animation: blink 1s step-end infinite;
             vertical-align: middle;
-            margin-left: 2px;
         }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
         .scroll-indicator {
             position: absolute;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
+            text-align: center;
             color: var(--text-muted);
             font-size: 12px;
-            letter-spacing: 0.05em;
-            z-index: 1;
         }
-        .scroll-indicator .mouse {
-            width: 24px;
-            height: 36px;
-            border: 2px solid var(--text-muted);
-            border-radius: 12px;
-            position: relative;
-        }
-        .scroll-indicator .mouse::after {
-            content: '';
-            position: absolute;
-            top: 6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 8px;
-            background: var(--text-muted);
-            border-radius: 2px;
-            animation: scrollWheel 1.5s infinite;
-        }
-        @keyframes scrollWheel {
-            0% { top: 6px; opacity: 1; }
-            100% { top: 18px; opacity: 0; }
-        }
-
         @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
             .hero-content { max-width: 100%; }
             .hero-buttons { justify-content: center; }
-            .terminal-window { max-width: 100%; }
             .scroll-indicator { display: none; }
         }
 
-        /* ===== SECCIÓN DE NEGOCIO ===== */
-        #business {
-            background: var(--bg-secondary);
-            position: relative;
-        }
+        /* BUSINESS */
+        #business { background: var(--bg-secondary); }
         .business-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -574,7 +460,6 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
-            backdrop-filter: blur(8px);
             transition: all var(--transition-smooth);
         }
         .business-card:hover {
@@ -590,13 +475,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 8px;
         }
-        .business-sub {
-            color: var(--text-secondary);
-            font-size: 14px;
-            margin-bottom: 24px;
-        }
+        .business-sub { color: var(--text-secondary); font-size: 14px; margin: 8px 0 24px; }
         .business-services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -617,12 +497,11 @@
         .service-item:hover {
             border-color: var(--accent-blue);
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
         }
         .service-item i { font-size: 32px; color: var(--accent-cyan); }
-        .service-item span { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+        .service-item span { font-size: 14px; font-weight: 600; }
 
-        /* ===== SKILLS ===== */
+        /* SKILLS */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -635,52 +514,16 @@
             border-radius: var(--radius-lg);
             padding: 28px;
             transition: all var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(4px);
-        }
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--gradient-blue);
-            opacity: 0;
-            transition: opacity var(--transition-fast);
         }
         .skill-card:hover {
             border-color: rgba(59, 130, 246, 0.4);
             transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.25);
+            box-shadow: var(--shadow-card-hover);
         }
-        .skill-card:hover::before { opacity: 1; }
-        .skill-icon {
-            font-size: 36px;
-            margin-bottom: 16px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-            color: var(--accent-cyan);
-        }
-        .skill-card:hover .skill-icon { transform: scale(1.1) rotate(-5deg); }
-        .skill-card h3 {
-            font-weight: 700;
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-        .skill-card p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 14px;
-        }
+        .skill-icon { font-size: 36px; margin-bottom: 16px; color: var(--accent-cyan); }
+        .skill-card h3 { font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+        .skill-card p { font-size: 14px; color: var(--text-secondary); }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
         .skill-tag {
             font-size: 11px;
             padding: 4px 12px;
@@ -688,15 +531,9 @@
             border: 1px solid rgba(59, 130, 246, 0.25);
             border-radius: 999px;
             color: var(--accent-cyan);
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-        .skill-card:hover .skill-tag {
-            background: rgba(59, 130, 246, 0.2);
-            border-color: rgba(59, 130, 246, 0.4);
         }
 
-        /* ===== PROYECTOS ===== */
+        /* PROJECTS */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -709,52 +546,25 @@
             border-radius: var(--radius-lg);
             overflow: hidden;
             transition: all var(--transition-smooth);
-            display: flex;
-            flex-direction: column;
         }
         .project-card:hover {
             border-color: rgba(59, 130, 246, 0.45);
             transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.3);
+            box-shadow: var(--shadow-card-hover);
         }
         .project-image {
-            width: 100%;
             height: 200px;
-            object-fit: cover;
             background: var(--bg-tertiary);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 56px;
             color: var(--text-muted);
-            transition: transform 0.4s ease, color 0.3s ease;
         }
-        .project-card:hover .project-image {
-            transform: scale(1.05);
-            color: var(--accent-cyan);
-        }
-        .project-body {
-            padding: 24px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .project-body h3 {
-            font-weight: 700;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-        .project-body p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            flex: 1;
-            margin-bottom: 16px;
-        }
-        .project-links {
-            display: flex;
-            gap: 14px;
-        }
+        .project-body { padding: 24px; }
+        .project-body h3 { font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+        .project-body p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+        .project-links { display: flex; gap: 14px; }
         .project-link {
             display: inline-flex;
             align-items: center;
@@ -763,14 +573,10 @@
             font-weight: 600;
             color: var(--accent-cyan);
             text-decoration: none;
-            transition: color 0.2s ease, transform 0.2s ease;
         }
-        .project-link:hover {
-            color: var(--accent-blue);
-            transform: translateX(3px);
-        }
+        .project-link:hover { color: var(--accent-blue); }
 
-        /* ===== EXPERIENCIA ===== */
+        /* TIMELINE */
         .timeline {
             position: relative;
             max-width: 800px;
@@ -794,51 +600,26 @@
             border: 3px solid var(--bg-primary);
             border-radius: 50%;
             box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
-            transition: box-shadow 0.3s ease;
-        }
-        .timeline-item:hover::before {
-            box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.5);
         }
         .timeline-date {
             font-size: 12px;
             font-weight: 600;
             color: var(--accent-cyan);
-            letter-spacing: 0.08em;
             margin-bottom: 6px;
         }
-        .timeline-item h3 {
-            font-weight: 700;
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-        .timeline-item .company {
-            font-size: 14px;
-            color: var(--text-secondary);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        .timeline-item p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
+        .timeline-item h3 { font-weight: 700; font-size: 18px; }
+        .timeline-item .company { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; }
+        .timeline-item p { font-size: 14px; color: var(--text-secondary); }
 
-        /* ===== CONTACTO ===== */
-        #contact {
-            background: var(--bg-secondary);
-        }
+        /* CONTACT */
+        #contact { background: var(--bg-secondary); }
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-top: 40px;
-            align-items: start;
         }
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+        .contact-info { display: flex; flex-direction: column; gap: 20px; }
         .contact-item {
             display: flex;
             align-items: center;
@@ -852,7 +633,6 @@
         .contact-item:hover {
             border-color: var(--accent-blue);
             transform: translateY(-3px);
-            box-shadow: var(--shadow-card-hover);
         }
         .contact-icon {
             width: 48px;
@@ -863,19 +643,10 @@
             align-items: center;
             justify-content: center;
             font-size: 22px;
-            flex-shrink: 0;
             color: var(--accent-cyan);
         }
-        .contact-text strong {
-            display: block;
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .contact-text span {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
+        .contact-text strong { display: block; font-size: 15px; }
+        .contact-text span { font-size: 14px; color: var(--text-secondary); }
         .contact-form {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -885,8 +656,7 @@
             flex-direction: column;
             gap: 18px;
         }
-        .contact-form input,
-        .contact-form textarea {
+        .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 14px 18px;
             background: var(--bg-tertiary);
@@ -895,43 +665,25 @@
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
             font-size: 14px;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
             outline: none;
         }
-        .contact-form input:focus,
-        .contact-form textarea:focus {
+        .contact-form input:focus, .contact-form textarea:focus {
             border-color: var(--accent-blue);
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         }
-        .contact-form textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-        .contact-form button {
-            align-self: flex-start;
-        }
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        .contact-form textarea { min-height: 130px; resize: vertical; }
+        .contact-form button { align-self: flex-start; }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
 
-        /* ===== FOOTER ===== */
+        /* FOOTER */
         footer {
             background: var(--bg-primary);
             border-top: 1px solid var(--border-color);
             padding: 36px 0;
             text-align: center;
         }
-        footer p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-        footer a {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-weight: 500;
-        }
+        footer p { font-size: 14px; color: var(--text-muted); }
+        footer a { color: var(--accent-cyan); text-decoration: none; }
         .footer-brand {
             font-family: 'JetBrains Mono', monospace;
             font-weight: 600;
@@ -941,7 +693,6 @@
             background-clip: text;
         }
 
-        /* ===== BOTÓN VOLVER ARRIBA ===== */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -954,30 +705,18 @@
             border-radius: 50%;
             font-size: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-            transition: all 0.3s ease;
-            z-index: 99;
             opacity: 0;
             visibility: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 99;
         }
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        .back-to-top:hover {
-            background: var(--accent-blue-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.6);
-        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--accent-blue-hover); transform: translateY(-4px); }
     </style>
 </head>
 
 <body>
     <div class="bg-pattern"></div>
-    <!-- Header -->
     <header id="header">
         <nav class="container">
             <a href="#hero" class="nav-logo">
@@ -996,21 +735,13 @@
         </nav>
     </header>
 
-    <!-- Hero -->
     <section id="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content reveal">
-                    <span class="hero-badge">
-                        <span class="hero-badge-dot"></span> Disponible para proyectos </>
-                    </span>
-                    <h1 class="hero-title">
-                        Álvaro Ramírez · <span class="highlight">Ingeniero Informático</span> & Especialista en Redes
-                    </h1>
-                    <p class="hero-description">
-                        Soluciones profesionales en reparación, mantenimiento y comercialización de equipos de cómputo.
-                        Apasionado por las infraestructuras de red seguras, automatización y optimización de sistemas.
-                    </p>
+                    <span class="hero-badge"><span class="hero-badge-dot"></span> Disponible para proyectos</span>
+                    <h1 class="hero-title">Álvaro Ramírez · <span class="highlight">Ingeniero Informático</span> & Especialista en Redes</h1>
+                    <p class="hero-description">Soluciones profesionales en reparación, mantenimiento y comercialización de equipos de cómputo. Apasionado por las infraestructuras de red seguras, automatización y optimización de sistemas.</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> Ver Proyectos</a>
                         <a href="#business" class="btn btn-secondary"><i class="fas fa-tools"></i> Servicios</a>
@@ -1018,11 +749,7 @@
                 </div>
                 <div class="hero-visual reveal">
                     <div class="terminal-window">
-                        <div class="terminal-header">
-                            <span class="terminal-dot red"></span>
-                            <span class="terminal-dot yellow"></span>
-                            <span class="terminal-dot green"></span>
-                        </div>
+                        <div class="terminal-header"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span></div>
                         <div class="terminal-body">
                             <span class="prompt">$</span> <span class="command">whoami</span><br>
                             <span class="output">Álvaro Ramírez - ITech Project</span><br><br>
@@ -1037,23 +764,17 @@
                     </div>
                 </div>
             </div>
-            <div class="scroll-indicator">
-                <span>SCROLL</span>
-                <div class="mouse"></div>
-            </div>
+            <div class="scroll-indicator"><span>SCROLL</span><div class="mouse"></div></div>
         </div>
     </section>
 
-    <!-- Negocio ITech Project (mi sello profesional) -->
     <section id="business" class="section-padding">
         <div class="container">
             <div class="business-card reveal">
                 <span class="section-label"><i class="fas fa-tools"></i> Mi sello profesional</span>
                 <div class="business-logo">ITech Project</div>
                 <div class="business-sub">Álvaro Ramírez · Ingeniero informático independiente</div>
-                <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 24px;">
-                    Ofrezco servicios integrales de reparación, mantenimiento y comercialización de equipos de cómputo, así como consultoría en redes y sistemas.
-                </p>
+                <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 24px;">Ofrezco servicios integrales de reparación, mantenimiento y comercialización de equipos de cómputo, así como consultoría en redes y sistemas.</p>
                 <div class="business-services">
                     <div class="service-item"><i class="fas fa-wrench"></i><span>Reparación de PC y Laptops</span></div>
                     <div class="service-item"><i class="fas fa-shield-virus"></i><span>Mantenimiento Preventivo</span></div>
@@ -1064,7 +785,6 @@
         </div>
     </section>
 
-    <!-- Habilidades (con stagger) -->
     <section id="skills" class="section-padding">
         <div class="container" style="text-align:center;">
             <span class="section-label reveal"><i class="fas fa-brain"></i> Competencias</span>
@@ -1081,7 +801,6 @@
         </div>
     </section>
 
-    <!-- Proyectos -->
     <section id="projects" class="section-padding">
         <div class="container" style="text-align:center;">
             <span class="section-label reveal"><i class="fas fa-folder-open"></i> Portafolio</span>
@@ -1098,7 +817,6 @@
         </div>
     </section>
 
-    <!-- Experiencia -->
     <section id="experience" class="section-padding">
         <div class="container" style="text-align:center;">
             <span class="section-label reveal"><i class="fas fa-clipboard-list"></i> Trayectoria</span>
@@ -1112,7 +830,6 @@
         </div>
     </section>
 
-    <!-- Contacto con formulario funcional (FormSubmit) -->
     <section id="contact" class="section-padding">
         <div class="container" style="text-align:center;">
             <span class="section-label reveal"><i class="far fa-envelope"></i> Hablemos</span>
@@ -1123,10 +840,10 @@
                     <div class="contact-item reveal"><span class="contact-icon"><i class="fas fa-envelope"></i></span><div class="contact-text"><strong>Email profesional</strong><span>alvaro.ramirezn833@gmail.com</span></div></div>
                     <div class="contact-item reveal"><span class="contact-icon"><i class="fab fa-linkedin"></i></span><div class="contact-text"><strong>LinkedIn</strong><span>linkedin.com/in/alvaroramirez</span></div></div>
                     <div class="contact-item reveal"><span class="contact-icon"><i class="fab fa-github"></i></span><div class="contact-text"><strong>GitHub</strong><span>github.com/ARCTTeam</span></div></div>
-                    <div class="contact-item reveal" style="border-color: rgba(6, 182, 212, 0.4);"><span class="contact-icon" style="background: rgba(6, 182, 212, 0.15);"><i class="fas fa-tools"></i></span><div class="contact-text"><strong>ITech Project</strong><span>Reparación y mantenimiento de equipos</span></div></div>
+                    <div class="contact-item reveal"><span class="contact-icon"><i class="fas fa-tools"></i></span><div class="contact-text"><strong>ITech Project</strong><span>Reparación y mantenimiento de equipos</span></div></div>
                 </div>
-                <!-- Formulario con FormSubmit y redirección a gracias.html -->
-                <form class="contact-form reveal" action="https://formsubmit.co/alvaro.ramirezn833@gmail.com" method="POST">
+                <!-- FORMULARIO CON CADENA ÚNICA -->
+                <form class="contact-form reveal" action="https://formsubmit.co/9f723988e5fe8bf4dcea1c3533d64e77" method="POST">
                     <input type="hidden" name="_subject" value="Nuevo mensaje desde ITech Project - Álvaro Ramírez">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
@@ -1141,7 +858,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>© 2026 <span class="footer-brand">Álvaro Ramírez · ITech Project</span> | <a href="mailto:alvaro.ramirezn833@gmail.com">alvaro.ramirezn833@gmail.com</a></p>
@@ -1152,22 +868,18 @@
     <button class="back-to-top" id="backToTop" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
 
     <script>
-        // Menú móvil
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
         mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
         navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
 
-        // Scroll header
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
 
-        // Botón volver arriba
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => backToTopBtn.classList.toggle('visible', window.scrollY > 600));
         backToTopBtn.addEventListener('click', () => smoothScrollTo(0, 800));
 
-        // Smooth scroll con easing
         function smoothScrollTo(targetPosition, duration = 800) {
             const startPosition = window.pageYOffset;
             const distance = targetPosition - startPosition;
@@ -1183,7 +895,6 @@
             requestAnimationFrame(animation);
         }
 
-        // Navegación suave
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1196,13 +907,10 @@
             });
         });
 
-        // Scroll reveal con threshold mejorado (0.2) y soporte para stagger
         const revealElements = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.2 });
         revealElements.forEach(el => observer.observe(el));
