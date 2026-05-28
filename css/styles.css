@@ -27,7 +27,6 @@
     --radius-xl: 20px;
     --transition-fast: 0.2s ease;
     --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	
 }
 
 /* ================================================================
@@ -37,7 +36,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
@@ -49,7 +47,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Patrón de fondo animado (puntos) */
+/* Patrón de fondo animado global (puntos) */
 .bg-pattern {
     position: fixed;
     top: 0;
@@ -69,6 +67,72 @@ body {
 }
 
 /* ================================================================
+   HEADER Y HERO con patrón de puntos mediante pseudo-elementos
+   ================================================================ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(6, 11, 20, 0.8);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid transparent;
+    transition: all var(--transition-smooth);
+    isolation: isolate; /* mejora el stacking context */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveDots 20s linear infinite;
+}
+
+header.scrolled {
+    border-bottom-color: rgba(30, 45, 74, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+#hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(ellipse at 30% 50%, rgba(6, 11, 20, 0.9) 0%, #060b14 60%),
+                radial-gradient(ellipse at 70% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveDots 20s linear infinite;
+}
+
+/* Asegurar que el contenido del header y hero quede por encima de los puntos */
+nav,
+.hero-grid,
+.scroll-indicator {
+    position: relative;
+    z-index: 1;
+}
+
+/* ================================================================
    UTILIDADES Y CONTENEDORES
    ================================================================ */
 .container {
@@ -84,7 +148,6 @@ body {
     padding: 100px 0;
 }
 
-/* Animación reveal al hacer scroll */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -133,26 +196,8 @@ body {
 }
 
 /* ================================================================
-   HEADER Y NAVEGACIÓN
+   NAVEGACIÓN
    ================================================================ */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-	background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
-    background: rgba(6, 11, 20, 0.8);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid transparent;
-    transition: all var(--transition-smooth);
-	
-}
-header.scrolled {
-    border-bottom-color: rgba(30, 45, 74, 0.6);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
 nav {
     display: flex;
     align-items: center;
@@ -264,15 +309,6 @@ nav {
 /* ================================================================
    HERO
    ================================================================ */
-#hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: radial-gradient(ellipse at 30% 50%, rgba(6, 11, 20, 0.9) 0%, #060b14 60%),
-                radial-gradient(ellipse at 70% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
-}
-
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
