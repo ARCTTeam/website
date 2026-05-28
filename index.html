@@ -111,7 +111,6 @@
                 <h2 class="section-title reveal">Tecnologías que domino</h2>
                 <p class="section-subtitle reveal">Stack multidisciplinar orientado a resultados, desde el núcleo de la red hasta la capa de presentación web.</p>
                 <div class="skills-grid stagger">
-                    <!-- Cada skill-card se mantiene igual, solo por brevedad pongo la primera -->
                     <div class="skill-card reveal"><div class="skill-icon"><i class="fas fa-globe"></i></div><h3>Redes & Seguridad</h3><p>pfSense, VPNs, firewall, segmentación de red.</p><div class="skill-tags"><span class="skill-tag">pfSense</span><span class="skill-tag">VPN</span><span class="skill-tag">Firewall</span></div></div>
                     <div class="skill-card reveal"><div class="skill-icon"><i class="fab fa-docker"></i></div><h3>Docker & Contenedores</h3><p>Docker Compose, stacks LAMP/LEMP, redes internas.</p><div class="skill-tags"><span class="skill-tag">Docker</span><span class="skill-tag">Docker Compose</span></div></div>
                     <div class="skill-card reveal"><div class="skill-icon"><i class="fab fa-linux"></i></div><h3>Linux</h3><p>Administración Debian/Ubuntu, hardening, bash.</p><div class="skill-tags"><span class="skill-tag">Bash</span><span class="skill-tag">Systemd</span><span class="skill-tag">SSH</span></div></div>
@@ -129,7 +128,6 @@
                 <h2 class="section-title reveal">Proyectos destacados</h2>
                 <p class="section-subtitle reveal">Una muestra de trabajos que reflejan mi enfoque práctico y mi pasión por la tecnología bien hecha.</p>
                 <div class="projects-grid stagger">
-                    <!-- Se repiten los project-card igual que antes -->
                     <div class="project-card reveal"><div class="project-image"><i class="fas fa-shield"></i></div><div class="project-body"><h3>Firewall pfSense Multi‑WAN</h3><p>Balanceo de carga y failover para PYME, con VPN para teletrabajo seguro.</p><div class="project-links"><a href="#" class="project-link"><i class="far fa-file-alt"></i> Caso de estudio</a><a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
                     <div class="project-card reveal"><div class="project-image"><i class="fab fa-docker"></i></div><div class="project-body"><h3>Stack Docker para desarrollo</h3><p>Nginx, PHP, MySQL y phpMyAdmin con Docker Compose.</p><div class="project-links"><a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
                     <div class="project-card reveal"><div class="project-image"><i class="fas fa-chart-bar"></i></div><div class="project-body"><h3>Script de auditoría del sistema</h3><p>PowerShell que genera informe de hardware, software y seguridad.</p><div class="project-links"><a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div></div>
@@ -167,11 +165,11 @@
                         <div class="contact-item reveal"><span class="contact-icon"><i class="fab fa-github"></i></span><div class="contact-text"><strong>GitHub</strong><span>github.com/ARCTTeam</span></div></div>
                         <div class="contact-item reveal"><span class="contact-icon"><i class="fas fa-tools"></i></span><div class="contact-text"><strong>ITech Project</strong><span>Reparación y mantenimiento de equipos</span></div></div>
                     </div>
-                    <form class="contact-form reveal" action="https://formsubmit.co/9f723988e5fe8bf4dcea1c3533d64e77" method="POST">
+                    <!-- Formulario manejado por JS (envío asíncrono) -->
+                    <form class="contact-form" id="contactForm">
                         <input type="hidden" name="_subject" value="Nuevo mensaje desde ITech Project - Álvaro Ramírez">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://arctteam.github.io/website/gracias.html">
                         <input type="text" name="nombre" placeholder="Tu nombre completo" required>
                         <input type="email" name="email" placeholder="Tu correo electrónico" required>
                         <input type="text" name="asunto" placeholder="Asunto">
