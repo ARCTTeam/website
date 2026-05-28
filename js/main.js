@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', toggleBackToTop);
     toggleBackToTop();
 
-    // ========== FUNCIÓN DE SCROLL SUAVE (USANDO NATIVO) ==========
+    // ========== FUNCIÓN DE SCROLL SUAVE ==========
     function smoothScrollTo(targetY, duration = 800) {
         const startY = window.scrollY;
         const distance = targetY - startY;
@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (startTime === null) startTime = currentTime;
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            // easing cúbico suave
             const ease = progress < 0.5
                 ? 4 * progress * progress * progress
                 : 1 - Math.pow(-2 * progress + 2, 3) / 2;
@@ -99,36 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.2 });
     revealElements.forEach(el => observer.observe(el));
 
-    // ========== ENVÍO ASÍNCRONO DEL FORMULARIO ==========
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-
-            const formData = new FormData(contactForm);
-            formData.append('_next', 'gracias.html');
-
-            try {
-                const response = await fetch('https://formsubmit.co/ajax/9f723988e5fe8bf4dcea1c3533d64e77', {
-                    method: 'POST',
-                    body: formData
-                });
-                const data = await response.json();
-                if (response.ok && data.success !== false) {
-                    window.location.href = 'gracias.html';
-                } else {
-                    throw new Error(data.message || 'Error al enviar');
-                }
-            } catch (error) {
-                console.error(error);
-                alert('❌ No se pudo enviar el mensaje. Por favor, inténtalo de nuevo más tarde o escríbeme directamente a alvaro.ramirezn833@gmail.com');
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
-            }
-        });
-    }
+    // ========== NOTA: el formulario se envía de forma tradicional (POST) ==========
+    // No se necesita JavaScript para el envío, ya que el action y method están en el HTML.
 });
