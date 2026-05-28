@@ -32,15 +32,19 @@ El sitio está diseñado como una carta de presentación moderna, completamente 
 ## 📂 Estructura del proyecto
 
 El proyecto sigue buenas prácticas de organización y separación de responsabilidades:
+
+```
 website/
-├── index.html # Página principal
-├── gracias.html # Página de agradecimiento tras envío del formulario
+├── index.html
+├── gracias.html
 ├── css/
-│ └── styles.css # Todos los estilos
+│   └── styles.css
 ├── js/
-│ └── main.js # Comportamiento (menú, scroll, observador, back to top)
-├── assets/ # (opcional) Imágenes, iconos, etc.
-└── README.md # Este archivo
+│   └── main.js
+├── assets/
+│   └── (imágenes, iconos, etc.)
+└── README.md
+```
 
 
 > **Nota:** El proyecto no requiere dependencias externas más allá de las CDNs mencionadas. No se necesita Node.js ni gestores de paquetes.
