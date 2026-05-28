@@ -167,4 +167,3 @@ Si deseas contribuir o reportar un problema, abre un issue en este repositorio. 
 Hecho con ❤️ por Álvaro Ramírez – Sueña, Construye y Vence.
 
 
-Simplemente copia todo el contenido (desde ````markdown` hasta la línea final) y pégalo en un nuevo archivo llamado `README.md` en la raíz de tu repositorio. Si ya existe, reemplázalo. Los badges y el formato se mostrarán correctamente en GitHub.
