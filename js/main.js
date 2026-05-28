@@ -1,31 +1,23 @@
+// Modo estricto para evitar errores comunes
 'use strict';
 
-/**
- * Archivo principal de JavaScript para el portafolio de Álvaro Ramírez.
- * Incluye:
- * - Menú móvil (toggle)
- * - Header con cambio de estilo al hacer scroll
- * - Botón "Volver arriba" con scroll suave
- * - Scroll suave para enlaces internos (anclas)
- * - Animaciones "reveal" al hacer scroll (Intersection Observer)
- * - Envío asíncrono del formulario de contacto a FormSubmit
- */
-
+// Esperamos a que todo el HTML esté cargado antes de ejecutar el código
 document.addEventListener('DOMContentLoaded', () => {
-    // ==================== ELEMENTOS DEL DOM ====================
+
+    // ========== 1. OBTENER REFERENCIAS A LOS ELEMENTOS DEL DOM ==========
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
     const header = document.getElementById('header');
     const backToTopBtn = document.getElementById('backToTop');
     const revealElements = document.querySelectorAll('.reveal');
 
-    // ==================== MENÚ MÓVIL ====================
+    // ========== 2. MENÚ MÓVIL (HAMBURGUESA) ==========
     if (mobileMenuBtn && navLinks) {
+        // Al hacer clic en el botón, se añade o quita la clase 'active'
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
-
-        // Cerrar menú al hacer clic en un enlace
+        // Cuando se hace clic en un enlace, se cierra el menú
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -33,18 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==================== HEADER SCROLL ====================
+    // ========== 3. CAMBIAR ESTILO DEL HEADER AL HACER SCROLL ==========
     const toggleHeaderScrolled = () => {
         if (window.scrollY > 50) {
-            header.classList.add('scrolled');
+            header.classList.add('scrolled'); // Añade sombra y borde
         } else {
             header.classList.remove('scrolled');
         }
     };
     window.addEventListener('scroll', toggleHeaderScrolled);
-    toggleHeaderScrolled(); // Estado inicial
+    toggleHeaderScrolled(); // Llamada inicial por si la página ya está scrolleada
 
-    // ==================== BOTÓN BACK TO TOP ====================
+    // ========== 4. MOSTRAR/OCULTAR BOTÓN "VOLVER ARRIBA" ==========
     const toggleBackToTop = () => {
         if (window.scrollY > 600) {
             backToTopBtn.classList.add('visible');
@@ -55,13 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', toggleBackToTop);
     toggleBackToTop();
 
-    if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', () => {
-            smoothScrollTo(0, 800);
-        });
-    }
-
-    // ==================== FUNCIÓN DE SCROLL SUAVE ====================
+    // ========== 5. FUNCIÓN DE SCROLL SUAVE CON EASING ==========
+    // Permite desplazarse de forma animada a una posición (sin saltos bruscos)
     function smoothScrollTo(targetPosition, duration = 800) {
         const startPosition = window.pageYOffset;
         const distance = targetPosition - startPosition;
@@ -71,20 +58,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (startTime === null) startTime = currentTime;
             const timeElapsed = currentTime - startTime;
             const progress = Math.min(timeElapsed / duration, 1);
-            // Función de easing cúbica para movimiento natural
+            // Función de easing cúbica: suave al inicio y al final
             const ease = progress < 0.5
                 ? 4 * progress * progress * progress
                 : 1 - Math.pow(-2 * progress + 2, 3) / 2;
             window.scrollTo(0, startPosition + distance * ease);
-            if (timeElapsed < duration) requestAnimationFrame(animation);
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
+            }
         }
         requestAnimationFrame(animation);
     }
 
-    // ==================== SCROLL SUAVE PARA ENLACES INTERNOS ====================
+    // ========== 6. SCROLL SUAVE PARA ENLACES INTERNOS (anclas) ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+            e.preventDefault(); // Evita el salto instantáneo
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
             const targetElement = document.querySelector(targetId);
@@ -96,23 +85,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ==================== REVEAL ON SCROLL (Intersection Observer) ====================
+    // ========== 7. ANIMACIONES "REVEAL" AL HACER SCROLL ==========
+    // Usamos IntersectionObserver: detecta cuándo un elemento entra en la pantalla.
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Mejora rendimiento
+                observer.unobserve(entry.target); // Deja de observarlo (mejora rendimiento)
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.2 }); // Se activa cuando el 20% del elemento es visible
 
     revealElements.forEach(el => observer.observe(el));
 
-    // ==================== ENVÍO DEL FORMULARIO DE CONTACTO (ASÍNCRONO) ====================
+    // ========== 8. ENVÍO DEL FORMULARIO DE CONTACTO (ASÍNCRONO) ==========
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Evita recarga de página
+            e.preventDefault(); // Evita la recarga de la página
 
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
@@ -120,10 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
 
             const formData = new FormData(contactForm);
-            // Añadimos la redirección manual (solo en caso de éxito)
-            formData.append('_next', 'https://arctteam.github.io/website/gracias.html');
+            // Añadimos la redirección manual (a gracias.html)
+            formData.append('_next', 'gracias.html');
 
             try {
+                // Petición POST a FormSubmit (servicio que reenvía el correo)
                 const response = await fetch('https://formsubmit.co/ajax/9f723988e5fe8bf4dcea1c3533d64e77', {
                     method: 'POST',
                     body: formData
@@ -131,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok && data.success !== false) {
-                    // Redirigir a la página de gracias
+                    // Redirige a la página de agradecimiento
                     window.location.href = 'gracias.html';
                 } else {
                     throw new Error(data.message || 'Error al enviar el mensaje');

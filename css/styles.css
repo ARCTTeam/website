@@ -1,21 +1,24 @@
-/* ================================================================
-   VARIABLES GLOBALES (tema oscuro)
-   ================================================================ */
+/* ==================================================================
+   ESTILOS COMPLETOS PARA PORTAFOLIO DE ÁLVARO RAMÍREZ
+   Comentados línea por línea para facilitar el estudio.
+   ================================================================== */
+
+/* ========== 1. VARIABLES GLOBALES (colores, sombras, tamaños) ========== */
 :root {
-    --bg-primary: #060b14;
-    --bg-secondary: #0a101f;
-    --bg-tertiary: #0f192a;
-    --bg-card: #111b30;
-    --border-color: #1e2d4a;
-    --border-accent: #2a4a8a;
-    --text-primary: #e2e8f0;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --accent-blue: #3b82f6;
+    --bg-primary: #060b14;      /* Fondo principal negro azulado */
+    --bg-secondary: #0a101f;    /* Fondo secundario */
+    --bg-tertiary: #0f192a;     /* Fondo para elementos internos */
+    --bg-card: #111b30;         /* Fondo de tarjetas */
+    --border-color: #1e2d4a;    /* Color de bordes sutiles */
+    --border-accent: #2a4a8a;   /* Bordes con acento azul */
+    --text-primary: #e2e8f0;    /* Texto principal blanco suave */
+    --text-secondary: #94a3b8;  /* Texto secundario gris claro */
+    --text-muted: #64748b;      /* Texto muy tenue */
+    --accent-blue: #3b82f6;     /* Azul brillante */
     --accent-blue-hover: #2563eb;
-    --accent-dark-blue: #1e3a8a;
-    --accent-cyan: #06b6d4;
-    --accent-green: #10b981;
+    --accent-dark-blue: #1e3a8a;/* Azul oscuro para botones */
+    --accent-cyan: #06b6d4;     /* Cian */
+    --accent-green: #10b981;    /* Verde */
     --accent-amber: #f59e0b;
     --accent-red: #ef4444;
     --gradient-blue: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
@@ -29,17 +32,15 @@
     --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ================================================================
-   RESET Y ESTILOS BASE
-   ================================================================ */
+/* ========== 2. RESET Y ESTILOS BASE ========== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* El ancho incluye bordes y paddings */
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
@@ -47,14 +48,14 @@ body {
     overflow-x: hidden;
 }
 
-/* Patrón de fondo animado global (puntos) */
+/* ========== 3. PATRÓN DE FONDO ANIMADO (PUNTITOS) ========== */
 .bg-pattern {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    pointer-events: none;   /* Permite hacer clic a través de los puntos */
     z-index: 0;
     background-image: radial-gradient(circle, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -66,9 +67,7 @@ body {
     100% { background-position: 40px 40px; }
 }
 
-/* ================================================================
-   HEADER Y HERO con patrón de puntos mediante pseudo-elementos
-   ================================================================ */
+/* ========== 4. PUNTOS TAMBIÉN EN HEADER Y HERO (pseudo-elementos) ========== */
 header {
     position: fixed;
     top: 0;
@@ -79,7 +78,7 @@ header {
     backdrop-filter: blur(16px);
     border-bottom: 1px solid transparent;
     transition: all var(--transition-smooth);
-    isolation: isolate; /* mejora el stacking context */
+    isolation: isolate;
 }
 
 header::before {
@@ -124,17 +123,13 @@ header.scrolled {
     animation: moveDots 20s linear infinite;
 }
 
-/* Asegurar que el contenido del header y hero quede por encima de los puntos */
-nav,
-.hero-grid,
-.scroll-indicator {
+/* Contenido debe quedar por encima de los puntos */
+nav, .hero-grid, .scroll-indicator {
     position: relative;
     z-index: 1;
 }
 
-/* ================================================================
-   UTILIDADES Y CONTENEDORES
-   ================================================================ */
+/* ========== 5. CONTENEDORES Y UTILIDADES ========== */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -148,6 +143,7 @@ nav,
     padding: 100px 0;
 }
 
+/* Animación de aparición al hacer scroll */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -158,6 +154,7 @@ nav,
     transform: translateY(0);
 }
 
+/* Etiquetas de sección (ej. "Competencias") */
 .section-label {
     display: inline-flex;
     align-items: center;
@@ -195,9 +192,7 @@ nav,
     margin: 0 auto 40px;
 }
 
-/* ================================================================
-   NAVEGACIÓN
-   ================================================================ */
+/* ========== 6. BARRA DE NAVEGACIÓN ========== */
 nav {
     display: flex;
     align-items: center;
@@ -214,6 +209,7 @@ nav {
     text-decoration: none;
     color: var(--text-primary);
 }
+
 .nav-logo-icon {
     width: 36px;
     height: 36px;
@@ -226,6 +222,7 @@ nav {
     color: #fff;
     box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
+
 .nav-logo-text {
     font-family: 'JetBrains Mono', monospace;
     font-size: 15px;
@@ -242,6 +239,7 @@ nav {
     gap: 28px;
     list-style: none;
 }
+
 .nav-links li a {
     color: var(--text-secondary);
     text-decoration: none;
@@ -254,6 +252,7 @@ nav {
     align-items: center;
     gap: 6px;
 }
+
 .nav-links li a::after {
     content: '';
     position: absolute;
@@ -264,12 +263,14 @@ nav {
     background: var(--accent-blue);
     transition: width var(--transition-fast);
 }
+
 .nav-links li a:hover {
     color: var(--text-primary);
 }
 .nav-links li a:hover::after {
     width: 100%;
 }
+
 .nav-links li a.contact-link {
     color: var(--accent-cyan);
     font-weight: 600;
@@ -284,6 +285,7 @@ nav {
     cursor: pointer;
 }
 
+/* Responsive: menú hamburguesa en móviles */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -306,9 +308,7 @@ nav {
     }
 }
 
-/* ================================================================
-   HERO
-   ================================================================ */
+/* ========== 7. HERO (PRESENTACIÓN) ========== */
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -330,6 +330,7 @@ nav {
     color: var(--accent-cyan);
     margin-bottom: 24px;
 }
+
 .hero-badge-dot {
     width: 8px;
     height: 8px;
@@ -337,6 +338,7 @@ nav {
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
+
 @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.5; transform: scale(0.85); }
@@ -349,6 +351,7 @@ nav {
     margin-bottom: 24px;
     letter-spacing: -0.03em;
 }
+
 .hero-title .highlight {
     background: var(--gradient-blue);
     background-clip: text;
@@ -368,6 +371,7 @@ nav {
     gap: 14px;
 }
 
+/* ========== 8. BOTONES (colores azul oscuro armonizados) ========== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -381,26 +385,31 @@ nav {
     cursor: pointer;
     border: none;
 }
+
 .btn-primary {
-    background: var(--accent-blue);
+    background: #1e3a8a;
     color: #fff;
-    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(6, 182, 212, 0.4);
 }
 .btn-primary:hover {
-    background: var(--accent-blue-hover);
+    background: #1e4db0;
     transform: translateY(-3px);
+    border-color: #06b6d4;
 }
+
 .btn-secondary {
     background: transparent;
-    color: var(--text-primary);
-    border: 1px solid var(--border-accent);
+    color: #e2e8f0;
+    border: 1px solid #2a4a8a;
 }
 .btn-secondary:hover {
-    border-color: var(--accent-blue);
-    background: rgba(59, 130, 246, 0.1);
+    border-color: #06b6d4;
+    background: rgba(6, 182, 212, 0.1);
     transform: translateY(-3px);
 }
 
+/* ========== 9. TERMINAL SIMULADA ========== */
 .terminal-window {
     width: 100%;
     max-width: 500px;
@@ -451,6 +460,7 @@ nav {
     0%,100%{opacity:1} 50%{opacity:0}
 }
 
+/* Indicador de scroll */
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
@@ -486,9 +496,7 @@ nav {
     }
 }
 
-/* ================================================================
-   BUSINESS
-   ================================================================ */
+/* ========== 10. BUSINESS (SELLO PROFESIONAL) ========== */
 #business {
     background: var(--bg-secondary);
 }
@@ -551,9 +559,7 @@ nav {
     font-weight: 600;
 }
 
-/* ================================================================
-   SKILLS
-   ================================================================ */
+/* ========== 11. HABILIDADES ========== */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -601,9 +607,7 @@ nav {
     color: var(--accent-cyan);
 }
 
-/* ================================================================
-   PROJECTS
-   ================================================================ */
+/* ========== 12. PROYECTOS ========== */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -661,9 +665,7 @@ nav {
     color: var(--accent-blue);
 }
 
-/* ================================================================
-   TIMELINE
-   ================================================================ */
+/* ========== 13. LÍNEA DE TIEMPO (EXPERIENCIA) ========== */
 .timeline {
     position: relative;
     max-width: 800px;
@@ -708,9 +710,7 @@ nav {
     color: var(--text-secondary);
 }
 
-/* ================================================================
-   CONTACTO
-   ================================================================ */
+/* ========== 14. CONTACTO ========== */
 #contact {
     background: var(--bg-secondary);
 }
@@ -758,7 +758,6 @@ nav {
     font-size: 14px;
     color: var(--text-secondary);
 }
-
 .contact-form {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -789,11 +788,12 @@ nav {
     min-height: 130px;
     resize: vertical;
 }
+/* Botón de envío (azul oscuro armonizado) */
 .contact-form button[type="submit"] {
     align-self: flex-start;
-    background: var(--accent-dark-blue);
+    background: #0f2b5c;
     color: white;
-    border: 1px solid rgba(59, 130, 246, 0.5);
+    border: 1px solid rgba(6, 182, 212, 0.5);
     border-radius: 12px;
     padding: 14px 28px;
     font-weight: 600;
@@ -809,10 +809,10 @@ nav {
     transition: transform 0.2s ease;
 }
 .contact-form button[type="submit"]:hover {
-    background: #0f2b5c;
-    border-color: rgba(6, 182, 212, 0.8);
+    background: #1e3a8a;
+    border-color: #06b6d4;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3), 0 0 0 1px rgba(6, 182, 212, 0.5);
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.2);
 }
 .contact-form button[type="submit"]:hover i {
     transform: translateX(4px) translateY(-2px);
@@ -824,9 +824,7 @@ nav {
     }
 }
 
-/* ================================================================
-   FOOTER
-   ================================================================ */
+/* ========== 15. FOOTER ========== */
 footer {
     background: var(--bg-primary);
     border-top: 1px solid var(--border-color);
@@ -863,9 +861,7 @@ footer .slogan {
     font-size: 13px;
 }
 
-/* ================================================================
-   BACK TO TOP
-   ================================================================ */
+/* ========== 16. BOTÓN FLOTANTE "VOLVER ARRIBA" ========== */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -921,9 +917,7 @@ footer .slogan {
     }
 }
 
-/* ================================================================
-   ANIMACIONES ESCALONADAS
-   ================================================================ */
+/* ========== 17. ANIMACIONES ESCALONADAS PARA REVEAL ========== */
 .stagger .reveal:nth-child(1) { transition-delay: 0.05s; }
 .stagger .reveal:nth-child(2) { transition-delay: 0.1s; }
 .stagger .reveal:nth-child(3) { transition-delay: 0.15s; }
@@ -931,19 +925,15 @@ footer .slogan {
 .stagger .reveal:nth-child(5) { transition-delay: 0.25s; }
 .stagger .reveal:nth-child(6) { transition-delay: 0.3s; }
 
-/* ================================================================
-   ESTILOS ESPECÍFICOS PARA LA PÁGINA DE GRACIAS
-   ================================================================ */
+/* ========== 18. ESTILOS PARA LA PÁGINA DE GRACIAS ========== */
 .thank-you-page {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    overflow: hidden;
     background: radial-gradient(ellipse at 30% 50%, rgba(6, 11, 20, 0.9) 0%, #060b14 60%),
                 radial-gradient(ellipse at 70% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
 }
-
 .thank-you-container {
     position: relative;
     z-index: 1;
@@ -958,18 +948,10 @@ footer .slogan {
     box-shadow: var(--shadow-card-hover);
     animation: fadeInUp 0.8s ease-out;
 }
-
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity:0; transform:translateY(30px); }
+    to { opacity:1; transform:translateY(0); }
 }
-
 .check-icon {
     font-size: 72px;
     background: var(--gradient-blue);
@@ -977,33 +959,22 @@ footer .slogan {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 24px;
-    display: inline-block;
     animation: scaleIn 0.6s ease-out 0.2s both;
 }
-
 @keyframes scaleIn {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
-
 .brand {
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 18px;
     font-weight: 600;
     background: var(--gradient-blue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
     margin-bottom: 20px;
     display: inline-block;
 }
-
 .thank-you-message {
     font-size: 16px;
     color: var(--text-secondary);
@@ -1013,12 +984,10 @@ footer .slogan {
     margin-left: auto;
     margin-right: auto;
 }
-
 .thank-you-message .highlight {
     color: var(--accent-green);
     font-weight: 600;
 }
-
 .terminal-mini {
     width: 100%;
     max-width: 400px;
@@ -1029,18 +998,15 @@ footer .slogan {
     overflow: hidden;
     box-shadow: var(--shadow-card);
 }
-
 .footer-note {
     margin-top: 28px;
     font-size: 13px;
     color: var(--text-muted);
 }
-
 .footer-note i {
     color: #ef4444;
     margin: 0 2px;
 }
-
 @media (max-width: 600px) {
     .thank-you-container {
         padding: 36px 20px;
